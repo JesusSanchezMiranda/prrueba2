@@ -1,0 +1,882 @@
+/*Reseteo general de la pagina*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/*Estilos del body*/
+body {
+    background: linear-gradient(rgb(255, 235, 212), rgb(168, 147, 120));
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+/*diseño del contenedor que almacena la barra de busqueda*/
+.container {
+    position: relative;
+}
+.container i{
+    margin: 0;
+    font-size: 15px;
+}
+/*Diseño de la barra de busqueda donde es usuario escribira lo que quietra buscar*/
+input {
+    width: 400px;
+    padding: 10px;
+    padding-right: 35px;
+    border-radius: 20px 20px 20px 20px;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+}
+
+/*Diseño de el boton lupa del buscador*/
+button {
+    background-color: rgb(211, 184, 150);
+    padding: 10px 15px;
+    position: absolute;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 20px 20px 20px 20px;
+    color: rgb(24, 23, 23);
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+button:hover {
+    background-color: rgb(163, 135, 94);
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(90, 87, 87);
+}
+
+
+header {
+    display: flex;
+    height: 70px;
+    background-color: rgb(53, 51, 51);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+header a{
+    padding-top: 0px;
+}
+
+header i{
+    margin: 0px 10px 0px 0px;
+    font-size: 30px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 10px;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+}
+
+nav i{
+    margin:10px;
+    font-size: 30px;
+}
+
+
+.DescargarApp{
+    list-style: none;
+}
+
+.DescargarApp a{
+    color: white;
+}
+
+.DescargarVertical{
+    position: absolute;
+    margin-top: 15px;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 17px;
+    list-style: none;
+}
+
+.DescargarVertical li{
+    text-align: center;
+    text-indent: 80px;
+    font-size: 17px;
+    margin-top: -110px;
+    margin-bottom: 36px;
+}
+
+.imagenDescarga{
+    margin-left: 160px;
+}
+
+.estilo{
+    display: flex;
+}
+
+.estilo img{
+    margin-right: 25px;
+}
+
+.DescargarApp li:hover .DescargarVertical{
+    display: block;
+    z-index: 1;
+}
+
+.DescargarVertical::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 192px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid rgb(255, 255, 255);
+    left: 100px;
+}
+
+
+
+#Categorias nav {
+    background-color: rgb(255, 235, 212);
+    font-size: 15px;
+    margin-top: 0px;
+}
+
+#Categorias .container {
+    padding-top: 0;
+}
+
+.Menu-Horizontal {
+    margin-left: 8px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0px;
+}
+.Menu-Horizontal i {
+    line-height: 25px;
+    width: 25px;
+}
+
+.Menu-Horizontal>li>a {
+    display: block;
+    padding: 10px 30px;
+    color: black;
+    text-decoration: none;
+    transition: all 400ms ease;
+    border-radius: 20px;
+}
+
+
+.Menu-Horizontal>li>a:hover {
+    background-color: rgb(146, 125, 97);
+    color: rgb(235, 227, 227);
+}
+
+.Menu-Vertical {
+    margin-top: 15px;
+    margin-left: 7px;
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 220px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px 15px 15px 15px;
+    padding: 10px 0px;
+}
+
+.Menu-Vertical::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 560px;
+    border-top: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-bottom: 15px solid white;
+    left: 100px;
+}
+
+.Menu-Vertical i{
+    line-height: 25px;
+    width: 25px;
+}
+
+
+.Menu-Horizontal li:hover .Menu-Vertical {
+    display: block;
+    z-index: 1;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.Menu-Vertical li a {
+    display: block;
+    color: black;
+    padding: 10px 10px 10px 20px;
+    text-decoration: none;
+}
+
+.Menu-Vertical li a:hover {
+    background-color: rgb(146, 125, 97);
+    color: rgb(235, 227, 227);
+}
+
+
+
+#Carrusel-1{
+    background-color: rgba(43, 43, 43, 0.534);
+    width: 1430px;
+    margin: 20px;
+}
+
+.Carrusel{
+    width: 1430px;
+    height: 500px;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.Carrusel ul{
+    display: flex;
+    padding: 0;
+    width: 500%;
+    animation: slide 20s infinite alternate ease-in-out;
+}
+
+.Carrusel li{
+    width: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.texto{
+    position: absolute;
+    text-align: center;
+    padding: 0 350px;
+    top: 180px;
+    color: white;
+}
+
+
+.texto h2{
+    font-size: 60px;
+    margin-bottom: 35px;
+}
+
+.Carrusel img{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+}
+
+
+@keyframes slide {
+    0% {margin-left: 0;}
+    10% {margin-left: 0;}
+
+    20% {margin-left: -100%;}
+    30% {margin-left: -100%;}
+
+    40% {margin-left: -200%;}
+    50% {margin-left: -200%;}
+
+    60% {margin-left: -300%;}
+    70% {margin-left: -300%;}
+
+    80% {margin-left: -400%;}
+    100% {margin-left: -400%;}
+}
+
+#Imagenes {
+    display: flex;
+    padding: 30px 20px;
+}
+
+#Imagenes .carta img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+
+#Imagenes .carta {
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+    color: white;
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgb(51, 49, 49);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+}
+
+#Imagenes .carta:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%)
+}
+
+#Imagenes .carta h3 {
+    font-size: 15px;
+}
+
+#Imagenes .carta p{
+    text-align: left;
+    padding: 0px 20px;
+}
+
+#Imagenes .carta a {
+    text-decoration: none;
+}
+
+#Imagenes .carta a:hover {
+    color: white;
+}
+
+
+#Imagenes .carta i{
+    padding: 0px 5px 0px 1px;
+}
+
+#Imagenes .carta h4{
+    margin: 5px 21px;
+    padding: 0px;
+    font-size: 11px;
+    background-color: rgb(218, 189, 146);
+    border-radius: 5px;
+    color: black;
+    font-weight: 300;
+    text-indent: -6px;
+}
+
+
+#Imagenes .carta h5{
+    margin: 7px;
+    display: block;
+    text-indent: -19px;
+    font-weight: 400;
+}
+
+
+#Imagenes-SegundaFila {
+    display: flex;
+    padding: 20px;
+}
+
+#Imagenes-SegundaFila .carta img {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+
+
+#Imagenes-SegundaFila .carta {
+    text-align: center;
+    padding: 15px 0px 0px 0px;
+    color: white;
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgb(51, 49, 49);
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+    transition: all 400ms ease;
+}
+
+#Imagenes-SegundaFila .carta:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+}
+
+#Imagenes-SegundaFila .carta h3 {
+    font-size: 15px;
+    text-align: center;
+}
+
+#Imagenes-SegundaFila .carta p{
+    text-align: left;
+    padding: 0px 20px;
+}
+
+#Imagenes-SegundaFila .carta a {
+    text-decoration: none;
+}
+
+#Imagenes-SegundaFila .carta a:hover {
+    color: white;
+}
+
+#Imagenes-SegundaFila .carta i{
+    padding: 0px 5px 0px 1px;
+}
+
+
+#Imagenes-SegundaFila .carta h4{
+    margin: 5px 21px;
+    padding: 0px;
+    font-size: 11px;
+    background-color: rgb(218, 189, 146);
+    border-radius: 5px;
+    color: black;
+    font-weight: 300;
+    text-indent: -6px;
+}
+
+#Imagenes-SegundaFila .carta h5{
+    margin: 7px;
+    display: block;
+    text-indent: -15px;
+    font-weight: 400;
+}
+
+
+#Banner-productos {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+}
+
+#Banner-productos .carta img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    margin: 10px 10px;
+}
+
+#Banner-productos .carta {
+    padding-top: 20px;
+    background-color: rgb(51, 49, 49);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px;
+    transition: all 400ms ease;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    cursor: default;
+}
+
+#Banner-productos .carta:hover {
+    transform: translateY(-3%);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+#Banner-productos .carta h2 {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+#Banner-productos .carta a {
+    text-decoration: none;
+    text-align: center;
+    transition: all 400ms ease;
+}
+
+#Banner-productos .carta a:hover {
+    color: rgb(218, 189, 146);
+}
+
+
+
+
+
+
+
+#Encabezado {
+    padding: 10px 33px 0px 34px;
+    cursor: default;
+}
+
+#Encabezado h2 {
+    padding: 15px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background-color: rgb(51, 49, 49);
+    margin: 0;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+
+#Banner-productos02 {
+    padding: 0px 35px 0px;
+    display: flex;
+    color: white;
+}
+
+#Banner-productos02 .carta img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    transition: all 400ms ease;
+}
+
+#Banner-productos02 .carta img:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+    box-shadow: 5px 5px 20px rgba(255, 198, 144, 0.4);
+}
+
+
+#Banner-productos02 .carta {
+    background-color: rgb(51, 49, 49);
+    padding: 20px 60px 30px 51px;
+    margin: 0px;
+    cursor: default;
+}
+
+#Banner-productos02 h3 {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#Banner-productos02 p{
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#Banner-productos02 h5{
+    font-size: 10px;
+    margin-left: 10px;
+    color: rgb(230, 194, 148);
+}
+
+#deco {
+    padding: 0px 33px 20px 35px;
+}
+
+#deco .boton {
+    padding: 0px 0px 20px 50px;
+    background-color: rgb(51, 49, 49);
+    border-radius: 0px 0px 20px 20px;
+}
+
+#deco .boton a {
+    text-decoration: none;
+    transition: all 400ms ease;
+}
+
+#deco .boton a:hover {
+    color: rgb(218, 189, 146);
+}
+
+
+
+
+
+
+
+#Encabezado02 {
+    padding: 10px 33px 0px 34px;
+    cursor: default;
+}
+
+#Encabezado02 h2 {
+    padding: 15px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background-color: rgb(51, 49, 49);
+    margin: 0;
+    border-radius: 20px 20px 0px 0px;
+}
+
+
+#Banner-Productos03 {
+    padding: 0px 35px 0px;
+    display: flex;
+    color: white;
+}
+
+
+#Banner-Productos03 .carta img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    transition: all 400ms ease;
+}
+#Banner-Productos03 .carta img:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+    box-shadow: 5px 5px 20px rgba(255, 198, 144, 0.4);
+}
+
+
+#Banner-Productos03 .carta {
+    background-color: rgb(51, 49, 49);
+    padding: 20px 60px 30px 51px;
+    margin: 0px;
+    transition: all 400ms ease;
+    cursor: default;
+}
+
+#Banner-Productos03 h3 {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#Banner-Productos03 p{
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+#Banner-Productos03 h5{
+    font-size: 10px;
+    margin-left: 10px;
+    color: rgb(230, 194, 148);
+}
+
+#deco02 {
+    padding: 0px 33px 20px 35px;
+}
+
+#deco02 .boton02 {
+    padding: 0px 0px 20px 50px;
+    background-color: rgb(51, 49, 49);
+    border-radius: 0px 0px 20px 20px;
+}
+
+
+#deco02 .boton02 a {
+    text-decoration: none;
+    transition: all 400ms ease;
+}
+
+#deco02 .boton02 a:hover {
+    color: rgb(218, 189, 146);
+}
+
+
+
+#Encabezado03 {
+    padding: 10px 33px 0px 34px;
+    cursor: default;
+}
+
+#Encabezado03 h2 {
+    padding: 15px;  
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    background-color: rgb(51, 49, 49);
+    margin: 0;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#Banner-Productos04 {
+    padding: 0px 35px 0px;
+    display: flex;
+    color: white;
+}
+
+
+#Banner-Productos04 img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    transition: all 400ms ease;
+}
+
+#Banner-Productos04 .carta img:hover {
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3%);
+    box-shadow: 5px 5px 20px rgba(255, 198, 144, 0.4);
+}
+
+#Banner-Productos04 .carta {
+    background-color: rgb(51, 49, 49);
+    padding: 20px 60px 30px 51px;
+    margin: 0px;
+    cursor: default;
+}
+
+#Banner-Productos04 h3 {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#Banner-Productos04 p{
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+#Banner-Productos04 h5{
+    font-size: 10px;
+    margin-left: 10px;
+    color: rgb(230, 194, 148);
+}
+
+#deco03 {
+    padding: 0px 33px 20px 35px;
+}
+
+
+#deco03 .boton03 {
+    padding: 0px 0px 20px 50px;
+    background-color: rgb(51, 49, 49);
+    border-radius: 0px 0px 20px 20px;
+}
+
+#deco03 .boton03 a {
+    text-decoration: none;
+    transition: all 400ms ease;
+}
+
+#deco03 .boton03 a:hover {
+    color: rgb(218, 189, 146);
+}
+
+
+footer {
+    background-color: black;
+    padding: 50px 0px;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-links{
+    width: 20%;
+    padding: 0px 30px;
+}
+
+.footer-links h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+
+.footer-links ul li a{
+    color: rgb(90, 89, 89);
+    display: block;
+    margin-bottom: 10px;
+    transition: all .3s ease;
+}
+
+
+.footer-links ul li a:hover{
+    color: white;
+    padding-left: 6px;
+}
+
+.tarjetas-link a{
+    display: inline-block;
+    min-height: 40px;
+    line-height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    border-radius: 30%;
+    color: white;
+    transition: all .5s ease;
+}
+
+
+.tarjetas-link a:hover{
+   background-color: rgb(125, 250, 250);
+   color: black;
+}
+
+
+.Social-link a{
+    display: inline-block;
+    min-height: 40px;
+    line-height: 40px;
+    width: 40px;
+    background-color: rgb(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    border-radius: 50%;
+    color: white;
+}
+
+
+    
+
+.fa-tiktok:hover{
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    transition: all .5s ease;
+}
+
+.fa-whatsapp:hover{
+    background-color: rgb(56, 172, 11);
+    color: rgb(255, 255, 255);
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    transition: all .5s ease;
+}
+
+.fa-x-twitter:hover{
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    transition: all .5s ease;
+}
+
+.fa-facebook-f:hover{
+    background-color: rgb(27, 85, 192);
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    transition: all .5s ease;
+}
+
+.fa-youtube:hover{
+    background-color: rgb(226, 17, 17);
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    transition: all .5s ease;
+}
+
+.fa-instagram:hover{
+    background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    line-height: 40px;
+    width: 40px;
+    transition: all .5s ease; 
+}
